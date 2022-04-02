@@ -1,0 +1,39 @@
+*,
+*::after,
+ *::before {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+
+  $vw : 100vw;
+  font-size: calc($vw / 1440px * 10px);
+
+  @include media('<tablet') {
+      font-size: calc($vw / 768px * 10px);
+  }
+
+  @include media('<phone') {
+      font-size: calc($vw / 375px * 10px);
+  }
+
+}
+
+body {
+  font-family: $font-satoshi;
+  @extend %description-16
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: transparent;
+  display: inline-block;
+  cursor: pointer;
+}

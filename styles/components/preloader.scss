@@ -1,0 +1,31 @@
+.preloader{
+  @extend %cover;
+  @extend %center;
+  background-color: $color-black;
+  color: $color-white;
+  z-index: z('preloader');
+
+  display: none
+}
+
+
+.preloader__wrapper{
+}
+
+.preloader__text {
+  @extend %title-48;
+
+  max-width: 76rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.preloader__number{
+  position: fixed;
+  bottom: 48px;
+  right: 48px;
+}
+
+.preloader__number__text{
+  @extend %title-48;
+}

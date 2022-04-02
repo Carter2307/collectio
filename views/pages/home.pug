@@ -1,0 +1,21 @@
+extends ../base.pug
+
+block variables
+  - const title = 'Collectio'
+  - const description = 'The best girl photography collection'
+  - let template = 'home'
+
+block content
+  .home
+    .home__wrapper
+      .home__gallery
+        .home__gallery__title Style
+        .home__gallery__content
+          .collumns
+            each el in data
+              .collumns__wrapper
+                .collumn
+                  each item in el
+                    a.collumn__item(href=`/detail/${item.id}`)
+                      figure.collumn__item__media
+                        img.collumn__item__media__image(alt=item.image.alt src=item.image.url)

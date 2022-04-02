@@ -1,0 +1,27 @@
+extends ../base.pug
+
+block variables
+  - const title = 'Collectio'
+  - const description = 'The best girl photography collection'
+
+  - let template = 'detail'
+
+block content
+  .detail
+    .detail__wrapper
+      a.datail__button(href='/')
+        svg.detail__button__icon(fill="none" viewBox="0 0 77 48" xmlns="http://www.w3.org/2000/svg")
+          line(x1="8" x2="69" y1="23.5" y2="23.5" stroke="#000")
+          path(d="m8 23.71c8.4345 0 15.693-5.9611 17.333-14.235l0.4907-2.4754" stroke="#000")
+          path(d="m8.3713 23.71c8.4346 0 15.693 5.961 17.333 14.235l0.4907 2.4754" stroke="#000")
+        | Back
+
+      .detail__content
+          h3.detail__content__title=item.label
+          figure.detail__content__media
+            img.detail__content__media__image(alt=item.image.alt src=item.image.url)
+
+      .detail__description
+        h4.detail__description__title=item.title
+        p.detail__description__text=item.description
+

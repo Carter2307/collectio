@@ -1,0 +1,38 @@
+.navigation{
+  position: relative;
+  z-index : z('navigation');
+}
+
+.navigation__wrapper{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-gap;
+
+  padding:3.2rem  4.8rem ;
+  display: flex;
+  align-items: center
+}
+
+.navigation__link{
+  @extend %title-24;
+}
+
+.navigation__button{
+  margin-left: auto;
+}
+
+.navigation__button__icon {
+  height: 2rem;
+
+  // @include media('<=phone') {
+  //   height: 6rem;
+  // }
+}
+
+.line_1{
+
+}
+.line__2{
+
+}

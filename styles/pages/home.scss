@@ -1,0 +1,24 @@
+.home{
+  //@extend %cover;
+  padding-top: $header-gap;
+}
+
+.home__wrapper{
+
+}
+
+.home__gallery{
+  position: relative;
+}
+
+.home__gallery__title{
+  @extend %title-128;
+  position : fixed;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+}
+
+.home__gallery__content{
+
+}

@@ -1,0 +1,56 @@
+%title-16 {
+  font-family: $font-against;
+  font-size: 1.6rem;
+}
+
+%title-18 {
+  font-family: $font-against;
+  font-size: 1.8rem;
+}
+
+%title-24 {
+  font-family: $font-against;
+  font-size: 2.4rem;
+
+  // @include media('<=phone') {
+  //   font-size: 6rem;
+  // }
+
+  // @include media('<tablet') {
+  //   font-size: 4rem;
+  // }
+}
+
+%title-32 {
+  font-family: $font-against;
+  font-size: 3.2rem;
+}
+
+%title-48 {
+  font-family: $font-against;
+  font-size: 4.8rem;
+}
+
+%title-54 {
+  font-family: $font-against;
+  font-size: 5.4rem;
+}
+
+%title-88 {
+  font-family: $font-against;
+  font-size: 8.8rem;
+
+  @include media('<=phone') {
+    font-size: 4.4rem;
+  }
+}
+
+%title-128 {
+  font-family: $font-against;
+  font-size: 12.8rem;
+}
+
+%title-154 {
+  font-family: $font-against;
+  font-size: 15.4rem;
+}

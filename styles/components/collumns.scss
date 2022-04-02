@@ -1,0 +1,46 @@
+.collumns {
+  display: flex;
+  padding: 0 5rem;
+
+  @include media('<=phone') {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+
+.collumns__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.collumn {
+
+}
+
+.collumn__item {
+  display: inline-block;
+  padding: 1.5rem;
+  width: 100%;
+
+  @include media('<=phone') {
+    padding: 0;
+  }
+}
+
+.collumn__item__media {
+  overflow: hidden;
+  display: inline-block;
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+.collumn__item__media__image {
+  display: inline-block;
+  //border-radius: 12px;
+
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+
+  object-fit: cover;
+}

@@ -1,0 +1,12 @@
+- const links = ['Grana Coffee', 'Start Fade', 'Plutonic', 'Fit Freedom']
+
+.menu
+  .menu__wrapper
+    ul.menu__links
+      each link, index in links
+        li.menu__links__items
+          a.menu__links__items__link(href='#')=link
+            span.menu__links__items__link__number=`0${index + 1}.`
+
+      figure.menu__links__media
+        img.menu__links__media__image(alt="" src="")

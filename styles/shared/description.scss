@@ -1,0 +1,18 @@
+%description-14 {
+  font-size: 1.4rem;
+
+}
+
+%description-16 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+
+  @include media('<tablet') {
+  font-size: 3rem;
+  }
+}
+
+%description-32 {
+  font-size: 3.2rem;
+}
+
