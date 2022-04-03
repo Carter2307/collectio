@@ -69,18 +69,18 @@ module.exports = {
       filename: '[name].css',
     }),
 
-   new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.imageminMinify,
-          options: {
-            plugins: [
-              ["gifsicle", { interlaced: true }],
-              ["jpegtran", { progressive: true }],
-              ["optipng", { optimizationLevel: 8 }],
-            ],
-          },
-        },
-      }),
+  //  new ImageMinimizerPlugin({
+  //       minimizer: {
+  //         implementation: ImageMinimizerPlugin.imageminMinify,
+  //         options: {
+  //           plugins: [
+  //             ["gifsicle", { interlaced: true }],
+  //             ["jpegtran", { progressive: true }],
+  //             ["optipng", { optimizationLevel: 8 }],
+  //           ],
+  //         },
+  //       },
+  //     }),
 
     new CleanWebpackPlugin(),
   ],
@@ -125,14 +125,14 @@ module.exports = {
         }
       },
 
-      {
-        test: /\.(jpe?g|png|gif|svg|webp)$/i,
-        use: [
-          {
-            loader: ImageMinimizerPlugin.loader,
-          },
-        ],
-      },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg|webp)$/i,
+      //   use: [
+      //     {
+      //       loader: ImageMinimizerPlugin.loader,
+      //     },
+      //   ],
+      // },
 
 
     ],

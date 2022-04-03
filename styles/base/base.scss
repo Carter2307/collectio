@@ -6,14 +6,13 @@
 }
 
 html {
-
+  @extend %cover;
   $vw : 100vw;
   font-size: calc($vw / 1440px * 10px);
-
+  
   @include media('<tablet') {
       font-size: calc($vw / 768px * 10px);
   }
-
   @include media('<phone') {
       font-size: calc($vw / 375px * 10px);
   }
@@ -21,6 +20,7 @@ html {
 }
 
 body {
+  @extend %cover;
   font-family: $font-satoshi;
   @extend %description-16
 }

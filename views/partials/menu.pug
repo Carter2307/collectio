@@ -1,12 +1,14 @@
-- const links = ['Grana Coffee', 'Start Fade', 'Plutonic', 'Fit Freedom']
+- const datas = [{ name : 'Grana Coffee', img : 'img-1', url : "#"}, { name : 'Start Fade', img : 'img-2', url : "#"}, { name : 'Plutonic', img : 'img-3', url : "#"}, { name : 'Fit Freedom', img : 'img-4', url : "#"}  ]
+
 
 .menu
   .menu__wrapper
     ul.menu__links
-      each link, index in links
-        li.menu__links__items
-          a.menu__links__items__link(href='#')=link
-            span.menu__links__items__link__number=`0${index + 1}.`
+      each item, index in datas
+        li.menu__links__items(data-snap="image" data-snap-image=item.img)
+          a.menu__links__items__link(href='#')=item.name
+          span.menu__links__items__number=`0${index + 1}.`
 
-      figure.menu__links__media
-        img.menu__links__media__image(alt="" src="")
+    figure.menu__links__media#menu__links__media
+      img.menu__links__media__image(src='/img-8.png')
+

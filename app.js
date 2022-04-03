@@ -32,8 +32,6 @@ app.get('/detail/:uid', (req, res) => {
 
       if (element.id == uid) {
         const item = element
-        console.log(item)
-
         res.render('pages/detail', {
           item
         })

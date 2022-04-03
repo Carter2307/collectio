@@ -3,6 +3,8 @@ const { merge } = require('webpack-merge');
 
 const config = require('./webpack.config');
 
+console.log(path.resolve(__dirname, '../public'),)
+
 module.exports = merge(config, {
   mode: 'development',
 
@@ -14,6 +16,8 @@ module.exports = merge(config, {
     },
     hot : false
   },
+
+  cache : false,
 
   output: {
     path: path.resolve(__dirname, '../public'),

@@ -4,12 +4,11 @@
   background-color: $color-black;
   color: $color-white;
   z-index: z('preloader');
-
-  display: none
 }
 
 
 .preloader__wrapper{
+
 }
 
 .preloader__text {
@@ -18,14 +17,24 @@
   max-width: 76rem;
   line-height: 1.5;
   text-align: center;
+
+  > span {
+    overflow: hidden;
+  }
+
+  span {
+    display: inline-block;
+  }
 }
 
 .preloader__number{
   position: fixed;
   bottom: 48px;
   right: 48px;
+  overflow: hidden
 }
 
 .preloader__number__text{
   @extend %title-48;
+  display: inline-block;
 }
