@@ -1,6 +1,6 @@
 .collumns {
   display: flex;
-  padding: 0 5rem;
+  padding: 0 10rem;
 
   @include media('<=phone') {
     flex-direction: column;
@@ -10,12 +10,20 @@
 
 .collumns__wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  height: 100vh;
+  padding: 2rem;
+
+  &:nth-child(even) {
+    flex-direction: column;
+  }
 }
 
 .collumn {
-
+  display: flex;
+  flex-direction: column-reverse;
 }
+
 
 .collumn__item {
   display: inline-block;
@@ -36,7 +44,7 @@
 }
 .collumn__item__media__image {
   display: inline-block;
-  //border-radius: 12px;
+  border-radius: 12px;
 
   max-height: 100%;
   max-width: 100%;

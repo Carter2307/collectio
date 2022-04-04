@@ -7,9 +7,12 @@
 
 html {
   @extend %cover;
+  height: 100vh;
+  overflow: hidden;
+
   $vw : 100vw;
   font-size: calc($vw / 1440px * 10px);
-  
+
   @include media('<tablet') {
       font-size: calc($vw / 768px * 10px);
   }
