@@ -41,14 +41,24 @@
   object-fit: cover;
   height: auto;
   width: 100%;
+  border-radius: 12px;
+
+  &:hover {
+    overflow: hidden;
+
+   .collumn__item__media__image {
+    transform: scale(1.3);
+  }
+
+}
+
 }
 .collumn__item__media__image {
   display: inline-block;
-  border-radius: 12px;
-
   max-height: 100%;
   max-width: 100%;
   width: 100%;
+  transition: transform 1s cubic-bezier(.8,0,.22,1);
 
   object-fit: cover;
 }
