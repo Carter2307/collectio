@@ -1,4 +1,5 @@
 import { lerp, clamp } from "../utils/function";
+import normalizeWheel from "normalize-wheel";
 
 export default class Smoothscroll{
 
@@ -17,14 +18,15 @@ export default class Smoothscroll{
     this.scroll = {
       current: 0,
       target: 0,
-      limit : this.element.offsetHeight - window.innerHeight
+      limit : this.element.getBoundingClientRect().height - window.innerHeight
     }
 
     this.init()
   }
 
   init() {
-    this.scroll.limit = this.element.offsetHeight - window.innerHeight
+    this.scroll.limit = this.element.getBoundingClientRect().height - window.innerHeight
+    console.log('defalut : ' + this.scroll.limit)
 
     this.addListener()
     this.update()
@@ -32,22 +34,24 @@ export default class Smoothscroll{
 
   onMouseWheel(e) {
 
+    const event = normalizeWheel(e)
+
     if (this.smoothOptions.direction === 'v' || this.smoothOptions.direction === 'v-') {
-        this.scroll.target += e.deltaY
+      this.scroll.target += event.pixelY
 
     } else if (this.smoothOptions.direction === 'h' || this.smoothOptions.direction === 'h-') {
-        this.scroll.target += e.deltaX
+      this.scroll.target += event.pixelX
     }
 
 
   }
 
   onResize() {
-    this.scroll.limit = this.element.offsetHeight - window.innerHeight
+      this.element.getBoundingClientRect().height - window.innerHeight
   }
 
   addListener() {
-    window.addEventListener('mousewheel', this.onMouseWheel.bind(this))
+    window.addEventListener('wheel', this.onMouseWheel.bind(this))
     window.addEventListener('resize', this.onResize.bind(this))
   }
 
@@ -60,7 +64,6 @@ export default class Smoothscroll{
     }
 
     this.translateByCase()
-    //this.element.style.transform = `translateY(-${this.scroll.current}px)`
     window.requestAnimationFrame(this.update.bind(this))
   }
 

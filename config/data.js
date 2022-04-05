@@ -167,82 +167,82 @@ module.exports = [
     ]
     ,   [
       {
-        id: 'picture-1',
+        id: 'picture-17',
         title: 'Gossip palianas uche',
         label: "GOSSIP",
         description: 'Sequi in eaque omnis provident et temporibus autem in. Magni laborum veniam laudantium quod illo quaerat modi autem voluptas. Maiores eveniet architecto quibusdam cumque est. Reiciendis dolores eius minus commodi aperiam omnis provident. Rerum exercitationem quasi.',
         image: {
-          url: '/img-1.png',
+          url: '/img-17.png',
           alt: "girl with red shirt"
         }
       },
       {
-        id: 'picture-2',
+        id: 'picture-18',
         title: 'Splintered Voyager',
         label: "DOUALA",
         description: 'Sequi in eaque omnis provident et temporibus autem in. Magni laborum veniam laudantium quod ill',
         image: {
-          url: '/img-2.png',
+          url: '/img-18.png',
           alt: "girl with reblue shirt"
         }
       },
       {
-        id: 'picture-3',
+        id: 'picture-19',
         title: 'The Missing Sword',
         label: "MADRID",
         description: 'Sequi in eaque omnis provident et temporibus autem in. Magni laborum veniam laudantium quod ill',
         image: {
-          url: '/img-3.png',
+          url: '/img-19.png',
           alt: "girl with reblue shirt"
         }
       },
       {
-        id: 'picture-4',
+        id: 'picture-20',
         title: 'Truth of River',
         label: "DUCOS",
         description: 'Sequi in eaque omnis provident et temporibus autem in. Magni laborum veniam laudantium quod ill',
         image: {
-          url: '/img-4.png',
+          url: '/img-20.png',
           alt: "girl with reblue shirt"
         }
       },
       {
-        id: 'picture-5',
+        id: 'picture-21',
         title: 'The Touchs Wizard',
         label: "PARIS",
         description: 'Sequi in eaque omnis provident et temporibus autem in. Magni laborum veniam laudantium quod ill',
         image: {
-          url: '/img-5.png',
+          url: '/img-21.png',
           alt: "girl with reblue shirt"
         }
       },
       {
-        id: 'picture-6',
+        id: 'picture-22',
         title: 'The Shards of the Male',
         label: "YAOUNDE",
         description: 'Sequi in eaque omnis provident et temporibus autem in. Magni laborum veniam laudantium quod ill',
         image: {
-          url: '/img-6.png',
+          url: '/img-22.png',
           alt: "girl with reblue shirt"
         }
       },
       {
-        id: 'picture-7',
+        id: 'picture-23',
         title: 'Weeping in the Thief',
         label: "MARSEILLE",
         description: 'Sequi in eaque omnis provident et temporibus autem in. Magni laborum veniam laudantium quod ill',
         image: {
-          url: '/img-7.png',
+          url: '/img-23.png',
           alt: "girl with reblue shirt"
         }
       },
       {
-        id: 'picture-8',
+        id: 'picture-24',
         title: 'Broken Wings',
         label: "LISBONE",
         description: 'Sequi in eaque omnis provident et temporibus autem in. Magni laborum veniam laudantium quod ill',
         image: {
-          url: '/img-8.png',
+          url: '/img-24.png',
           alt: "girl with reblue shirt"
         }
       },

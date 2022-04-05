@@ -12,10 +12,10 @@
 }
 
 .preloader__text {
-  @extend %title-48;
+  @extend %title-32;
 
   max-width: 76rem;
-  line-height: 1.5;
+  line-height: 1.2;
   text-align: center;
 
   > span {

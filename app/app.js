@@ -35,8 +35,8 @@ class App {
   }
 
   onPreloaded() {
-    this.page.show()
     this.preloader.destroy()
+    this.page.show()
   }
 
 }

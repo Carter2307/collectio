@@ -40,9 +40,11 @@ export default class Menu extends Components {
 
   toggle() {
     if (this.element.classList.contains("menu--open")) {
+      this.elements.button.classList.remove("navigation__button--active");
       this.element.classList.remove("menu--open");
       this.hide();
     } else {
+      this.elements.button.classList.add("navigation__button--active");
       this.element.classList.add("menu--open");
       this.show();
     }

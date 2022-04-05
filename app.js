@@ -30,26 +30,16 @@ app.get('/detail/:uid', (req, res) => {
     for (let j = 0; j < elements.length; j++) {
       const element = elements[j];
 
-      if (element.id == uid) {
+      if (element.id === uid) {
         const item = element
         res.render('pages/detail', {
           item
         })
+        break
       }
     }
-    break
   }
 
-  // data.forEach(el => {
-  //   el.forEach(item => {
-  //     if (item.id == uid) {
-  //       res.render('pages/detail', {
-  //         item
-  //       })
-
-  //     }
-  //   })
-  // })
 
 })
 

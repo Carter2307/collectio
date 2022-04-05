@@ -18,6 +18,7 @@ export default class Home extends Pages{
   init() {
     each(this.elements.collumns, (collumn, index) => {
       if (index == 1) {
+        console.log(index)
         new Smoothscroll(collumn, {
           direction: "v",
           smooth : .6
