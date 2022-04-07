@@ -1,27 +1,27 @@
-@import './base/reset';
+@import "./base/reset";
 
-@import './utils/variables';
-@import './utils/functions';
-@import './utils/mixins';
-@import './utils/responsive';
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/responsive";
 
-@import './shared/description';
-@import './shared/title';
+@import "./shared/description";
+@import "./shared/title";
+@import "./shared/inputs";
 
-@import './base/font';
-@import './base/base';
+@import "./base/font";
+@import "./base/base";
 
+@import "./components/preloader";
+@import "./components/menu";
+@import "./components/collumns";
+@import "./components/buttons";
 
-@import './components/preloader';
-@import './components/menu';
-@import './components/collumns';
+@import "./layout/navigation";
 
-@import './layout/navigation';
+@import "./pages/home";
+@import "./pages/detail";
 
-@import './pages/home';
-
-@import './pages/detail';
-
-
-
-
+@import "./pages/uploader/uploader";
+@import "./pages/uploader/content";
+@import "./pages/uploader/dropzone";

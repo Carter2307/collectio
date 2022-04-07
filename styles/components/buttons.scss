@@ -1,0 +1,25 @@
+.uploader__button {
+  background-color: transparent;
+  border-radius: 8px;
+  outline: none;
+  border: $input-border;
+  cursor: pointer;
+
+  @extend %center;
+  background-color: white;
+}
+
+.uploader__button--sm {
+  padding: 8px 16px;
+  font-size: 10px;
+  border-radius: 5px;
+}
+
+.uploader__button--lg {
+  padding: 18px 24px;
+  font-size: 14px;
+}
+
+.uploader__button__file {
+  display: none;
+}

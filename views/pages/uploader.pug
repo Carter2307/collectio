@@ -1,0 +1,49 @@
+extends ../base.pug
+
+block variables
+  - const title = 'Upload image to gallery'
+  - const description = 'The best girl photography collection'
+
+  - let template = 'uploader'
+
+block content
+  .uploader
+    .uploader__wrapper
+      a.datail__button(href='/')
+        svg.detail__button__icon(fill="none" viewBox="0 0 77 48" xmlns="http://www.w3.org/2000/svg")
+          line(x1="8" x2="69" y1="23.5" y2="23.5" stroke="#000")
+          path(d="m8 23.71c8.4345 0 15.693-5.9611 17.333-14.235l0.4907-2.4754" stroke="#000")
+          path(d="m8.3713 23.71c8.4346 0 15.693 5.961 17.333 14.235l0.4907 2.4754" stroke="#000")
+        | Back
+
+      .uploader__content
+        form.upload__content__wrapper(action='/uploader')
+          .uploader__content__header
+            h4 Upload image
+
+          .uploader__content__body
+            .uploader__content__body__items
+              each item in inputs
+                .uploader__content__body__item__inputs
+                  label.uploader__content__item__label(for=item.id)=item.label
+                  if item.slug == 'input'
+                    input.uploader__content__item__input(type=item.type id=item.id name=item.name placeholder=item.placeholder)
+                  else
+                    textarea.uploader__content__item__textarea(name=item.name id=item.id cols="30" rows="7" placeholder=item.placeholder)
+
+            .uploader__content__body__items
+              .uploader__content__body__dropzone
+                .uploader__content__description
+                  img.uploader__content__description__image(src="/upload.svg" alt="upload icon")
+                  h4.uploader__content__description__title Drag and drop the file
+                  p.uploader__content__description__text or use the button bellow to upload via your computer file
+
+                .uploader__content__fileselector
+                  h6.uploader__content__fileselector__title Add file
+                  label.uploader__content__fileselector__label.uploader__button.uploader__button--sm(for='input-file')
+                    | upload
+                    input.uploader__button__file(type="file" name="image" id='input-file')
+
+          .uploader__content__footer
+            button.uploader__button.uploader__button--lg.uploader__button__footer(type='button') upload image
+

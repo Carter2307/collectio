@@ -1,0 +1,42 @@
+@import url('http://fonts.cdnfonts.com/css/inter"');
+
+.uploader {
+  padding-top: $header-gap;
+  font-family: "inter", sans-serif;
+  font-weight: 400;
+}
+
+.uploader__wrapper {
+}
+
+.uploader__content {
+  width: 100%;
+  max-width: 840px;
+  padding: 16px;
+  margin: auto;
+}
+
+.upload__content__wrapper {
+  width: 100%;
+  border: 1px solid rgba($color: #c8c8c8, $alpha: 0.5);
+  box-shadow: 0 16px 32px rgba($color: #0000, $alpha: 0.08);
+  border-radius: 8px;
+}
+
+.uploader__content__header {
+  padding: 16px;
+  border-bottom: 1px solid rgba($color: #0000, $alpha: 0.1);
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.uploader__content__footer {
+  display: flex;
+  padding: 16px;
+  border-top: 1px solid rgba($color: #0000, $alpha: 0.1);
+  background-color: $color-gray-200;
+}
+
+.uploader__button {
+  margin-left: auto;
+}

@@ -1,0 +1,77 @@
+.uploader__content__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @include media(">tablet") {
+    flex-direction: row;
+  }
+}
+
+.uploader__content__body__items:nth-child(1) {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.uploader__content__body__items:nth-child(2) {
+  width: 100%;
+  max-width: 378px;
+}
+
+.uploader__content__body__item__inputs {
+  border: $input-border;
+  border-radius: 8px;
+  width: 100%;
+  display: flex;
+  height: 53px;
+
+  &:nth-child(3),
+  &:nth-child(6) {
+    grid-column: span 2;
+  }
+
+  &:nth-child(6) {
+    flex-direction: column;
+    height: auto;
+
+    .uploader__content__item__label {
+      border-bottom: $input-border;
+      border-right: none;
+      font-size: 14px;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.uploader__content__item__label {
+  flex: auto;
+  @extend %center;
+  min-width: 51px;
+  min-height: 38px;
+  padding: 0 32px;
+  background-color: $color-gray-200;
+  border-right: $input-border;
+}
+
+.uploader__content__item__input {
+  @extend %input;
+  flex: auto;
+  font-size: 16px;
+
+  &::placeholder {
+    color: rgba($color: #000000, $alpha: 0.5);
+  }
+}
+
+.uploader__content__item__textarea {
+  @extend %input;
+  line-height: 1.5;
+  font-family: "inter";
+
+  &::placeholder {
+    color: rgba($color: #000000, $alpha: 0.5);
+    font-weight: 300;
+  }
+}
