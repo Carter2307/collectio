@@ -19,10 +19,10 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
  */
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
- /**
-  * Copie des fichiers individuels ou des répertoires entiers,
-  * qui existent déjà, dans le répertoire de construction
-  */
+/**
+ * Copie des fichiers individuels ou des répertoires entiers,
+ * qui existent déjà, dans le répertoire de construction
+ */
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 /**
@@ -39,16 +39,23 @@ const dirImages = path.join(__dirname, '../images')
 const dirShared = path.join(__dirname, '../shared')
 const dirVideos = path.join(__dirname, '../videos')
 const dirStyles = path.join(__dirname, '../styles')
+const dirConfiig = path.join(__dirname, '../config')
 const dirNode = 'node_modules'
 
-
 module.exports = {
-
   entry: [path.join(dirApp, 'app.js'), path.join(dirStyles, 'main.scss')],
 
   //Simplifie l'utilisation des chemin -> path
   resolve: {
-    modules: [dirApp, dirImages, dirShared, dirVideos, dirStyles, dirNode],
+    modules: [
+      dirApp,
+      dirImages,
+      dirShared,
+      dirVideos,
+      dirStyles,
+      dirConfiig,
+      dirNode,
+    ],
   },
 
   plugins: [
@@ -69,18 +76,18 @@ module.exports = {
       filename: '[name].css',
     }),
 
-  //  new ImageMinimizerPlugin({
-  //       minimizer: {
-  //         implementation: ImageMinimizerPlugin.imageminMinify,
-  //         options: {
-  //           plugins: [
-  //             ["gifsicle", { interlaced: true }],
-  //             ["jpegtran", { progressive: true }],
-  //             ["optipng", { optimizationLevel: 8 }],
-  //           ],
-  //         },
-  //       },
-  //     }),
+    //  new ImageMinimizerPlugin({
+    //       minimizer: {
+    //         implementation: ImageMinimizerPlugin.imageminMinify,
+    //         options: {
+    //           plugins: [
+    //             ["gifsicle", { interlaced: true }],
+    //             ["jpegtran", { progressive: true }],
+    //             ["optipng", { optimizationLevel: 8 }],
+    //           ],
+    //         },
+    //       },
+    //     }),
 
     new CleanWebpackPlugin(),
   ],
@@ -106,17 +113,15 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            options: { importLoaders: 1 }
+            options: { importLoaders: 1 },
           },
           {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  ["postcss-preset-env"]
-                ]
-              }
-            }
+                plugins: [['postcss-preset-env']],
+              },
+            },
           },
           {
             loader: 'sass-loader',
@@ -130,7 +135,7 @@ module.exports = {
         type: 'asset/resource',
         generator: {
           filename: '[name].[hash].[ext]',
-        }
+        },
       },
 
       // {
@@ -141,14 +146,14 @@ module.exports = {
       //     },
       //   ],
       // },
-
-
     ],
   },
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin({
-       extractComments: false,
-    })],
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+    ],
   },
 }

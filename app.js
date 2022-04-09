@@ -1,55 +1,52 @@
-const path = require("path");
-const express = require("express");
+const path = require('path')
+const express = require('express')
 
-const data = require("./config/data");
-const inputs = require("./config/inputs");
+const data = require('./config/data')
 
-const port = 3000;
+const port = 3000
 
-const app = express();
+const app = express()
 
 //PUG template engine
-app.set("views", "./views");
-app.set("view engine", "pug");
+app.set('views', './views')
+app.set('view engine', 'pug')
 
 //Add static file  like js and css
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, '/public')))
 
-app.get("/", (req, res) => {
-  res.render("pages/home", {
+app.get('/', (req, res) => {
+  res.render('pages/home', {
     data,
-  });
-});
+  })
+})
 
-app.get("/detail/:uid", (req, res) => {
-  const uid = req.params.uid;
+app.get('/detail/:uid', (req, res) => {
+  const uid = req.params.uid
 
   for (let i = 0; i < data.length; i++) {
-    const elements = data[i];
+    const elements = data[i]
     for (let j = 0; j < elements.length; j++) {
-      const element = elements[j];
+      const element = elements[j]
 
       if (element.id === uid) {
-        const item = element;
-        res.render("pages/detail", {
+        const item = element
+        res.render('pages/detail', {
           item,
-        });
-        break;
+        })
+        break
       }
     }
   }
-});
+})
 
-app.get("/uploader", (req, res) => {
-  res.render("pages/uploader", {
-    inputs,
-  });
-});
+// Upload image and add datas to data.js
+app.use('/upload', require('./Routes/uploader/index'))
 
+// Page no found handler
 app.use((req, res) => {
-  res.status(404).render("404");
-});
+  res.status(404).render('404')
+})
 
 app.listen(port, () => {
-  console.log(`Server is listening on port: ${port}`);
-});
+  console.log(`Server is listening on port: ${port}`)
+})

@@ -1,6 +1,6 @@
 .uploader__content__body__dropzone {
   border-radius: 8px;
-  border: 1px dashed rgba($color: #000000, $alpha: 0.7);
+  border: 3px dashed rgba($color: #000000, $alpha: 0.2);
   padding: 12px 18px;
   position: relative;
   height: 100%;
@@ -14,12 +14,10 @@
   gap: 8px;
 }
 
-.uploader__content__description__image {
-}
-
 .uploader__content__description__title {
-  font-family: 600;
+  font-weight: 600;
   font-size: 20px;
+  text-align: center;
 }
 .uploader__content__description__text {
   font-size: 12px;
@@ -35,7 +33,7 @@
   right: 12px;
   background-color: $color-gray;
   border: $input-border;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 4px 8px 4px 16px;
   display: flex;
   align-items: center;
@@ -52,4 +50,41 @@
 
 .upload__button__fileselector {
   font-size: 14px;
+}
+
+// Error handler
+.uploader__content__body__dropzone.drop__success {
+  $color: green;
+  border-color: $color;
+
+  & .uploader__content__description__title,
+  & .uploader__content__description__text {
+    color: $color !important;
+  }
+
+  & .uploader__content__description__image .file {
+    fill: rgba($color, $alpha: 0.1);
+  }
+
+  & .uploader__content__description__image .plus {
+    fill: rgba($color, $alpha: 0.8);
+  }
+}
+
+.uploader__content__body__dropzone.drop__error {
+  $color: crimson;
+  border-color: $color;
+
+  & .uploader__content__description__title,
+  & .uploader__content__description__text {
+    color: $color !important;
+  }
+
+  & .uploader__content__description__image .file {
+    fill: rgba($color, $alpha: 0.3);
+  }
+
+  & .uploader__content__description__image .plus {
+    fill: rgba($color, $alpha: 0.8);
+  }
 }

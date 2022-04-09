@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 32px;
 
-  @include media(">tablet") {
+  @include media('>tablet') {
     flex-direction: row;
   }
 }
@@ -58,7 +58,7 @@
 .uploader__content__item__input {
   @extend %input;
   flex: auto;
-  font-size: 16px;
+  font-size: 14px;
 
   &::placeholder {
     color: rgba($color: #000000, $alpha: 0.5);
@@ -68,7 +68,8 @@
 .uploader__content__item__textarea {
   @extend %input;
   line-height: 1.5;
-  font-family: "inter";
+  font-family: 'inter';
+  max-height: 144px;
 
   &::placeholder {
     color: rgba($color: #000000, $alpha: 0.5);
