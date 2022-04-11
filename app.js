@@ -2,7 +2,6 @@ const path = require('path')
 const express = require('express')
 
 const data = require('./config/data')
-
 const port = 3000
 
 const app = express()
@@ -10,6 +9,8 @@ const app = express()
 //PUG template engine
 app.set('views', './views')
 app.set('view engine', 'pug')
+
+app.use(express.urlencoded({ extended: true }))
 
 //Add static file  like js and css
 app.use(express.static(path.join(__dirname, '/public')))

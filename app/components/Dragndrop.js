@@ -28,7 +28,6 @@ export default class Dragndrop extends Components {
 
   dragOver(e) {
     e.preventDefault()
-    console.log('dragOver')
     e.dataTransfer.dropEffect = 'copy'
   }
 
@@ -47,10 +46,30 @@ export default class Dragndrop extends Components {
 
     each(this.data, (file) => {
       this.file = this.validFile(file, 'images', 3, this.errorHandler)
+
+      // const reader = new FileReader()
+
+      // reader.readAsArrayBuffer(this.file)
+
+      // reader.onloadstart = (e) => {
+      //   console.log('loading image start')
+      // }
+
+      // reader.onprogress = (e) => {
+      //   console.log(e.loaded / e.total)
+      // }
+
+      // reader.onload = (e) => 'Reading is complete without error'
+
+      // reader.onloadend = (e) => 'Reading is finishing'
     })
 
-    if (this.file !== null || this.file !== undefined)
-      this.elements.name.innerHTML = this.file.name
+    if (this.file) this.elements.name.innerHTML = this.file.name
+  }
+
+  getFile() {
+    console.log(this.file)
+    return this.file
   }
 
   validFile(file, type, sizes, cb) {
@@ -71,10 +90,11 @@ export default class Dragndrop extends Components {
           return item
         } else {
           cb(new Error('the file is too wide please reduce file size'))
-          return 0
+          return null
         }
       } else {
         cb(new Error('is not an images/pictures'))
+        return null
       }
     }
   }

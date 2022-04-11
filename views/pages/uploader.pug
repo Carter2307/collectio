@@ -17,7 +17,7 @@ block content
         | Back
 
       .uploader__content
-        form.upload__content__wrapper(action='/uploader')
+        form.upload__content__wrapper(action='/uploader' enctype="multipart/form-data")
           .uploader__content__header
             h4 Upload image
 
@@ -45,5 +45,5 @@ block content
                     input.uploader__button__file(type="file" name="image" id='input-file')
 
           .uploader__content__footer
-            button.uploader__button.uploader__button--lg.uploader__button__footer(type='button') upload image
+            button.uploader__button.uploader__button--lg.uploader__button__footer(type='submit') upload image
 

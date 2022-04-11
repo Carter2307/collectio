@@ -8,7 +8,8 @@
     "backend:development": "nodemon app.js",
     "frontend:build": "webpack --progress --config bundler/webpack.config.build.js",
     "frontend:development": "webpack serve --progress --config bundler/webpack.config.development.js",
-    "start": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\""
+    "start": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\"",
+    "test" : "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "@squoosh/lib": "^0.4.0",
     "auto-bind": "^5.0.1",
     "babel-loader": "^8.2.4",
+    "body-parser": "^1.20.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
@@ -48,6 +50,7 @@
   },
   "dependencies": {
     "express": "^4.17.3",
+    "multer": "^1.4.4",
     "pug": "^3.0.2"
   }
 }
