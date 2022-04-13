@@ -58,12 +58,14 @@ class App {
 
     if (res.status === 200) {
       const html = await res.text()
+
+      window.history.pushState({}, '', url)
+
       const div = document.createElement('div')
       div.innerHTML = html
 
       const divContent = div.querySelector('.content')
       this.template = divContent.getAttribute('data-template')
-      console.log(this.template)
 
       this.content.setAttribute('data-template', this.template)
       this.content.innerHTML = divContent.innerHTML

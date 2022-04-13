@@ -13,20 +13,18 @@ export default class Smoothscroll {
       ...opts,
     })
 
+    this.init()
+  }
+
+  init() {
     this.scroll = {
       current: 0,
       target: 0,
       limit: 0,
     }
 
-    this.init()
-  }
-
-  init() {
-    console.log(this.element)
-
-    this.scroll.limit =
-      this.element.getBoundingClientRect().height - window.innerHeight
+    this.scroll.limit = this.element.clientHeight - window.innerHeight
+    console.log(this.element.clientHeight)
 
     this.addListener()
     this.update()
@@ -49,8 +47,7 @@ export default class Smoothscroll {
   }
 
   onResize() {
-    console.log('resize')
-    this.element.getBoundingClientRect().height - window.innerHeight
+    this.element.clientHeight - window.innerHeight
   }
 
   addListener() {
@@ -60,7 +57,6 @@ export default class Smoothscroll {
 
   update() {
     this.scroll.target = clamp(this.scroll.target, 0, this.scroll.limit)
-    console.log(this.scroll.target)
     this.scroll.current = lerp(
       this.scroll.current,
       this.scroll.target,

@@ -85,12 +85,11 @@ export default class Uploader extends Pages {
     const res = await fetch(url, ops)
 
     if (res.status === 200) {
-      //do sommething
       const result = await res.text()
 
       this.elements.id.value = this.generateID()
       this.elements.url.value = this.generateURL()
-      
+
       this.elements.id.disabled = true
       this.elements.url.disabled = true
 

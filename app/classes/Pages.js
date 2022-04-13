@@ -1,5 +1,6 @@
 import each from 'lodash/each'
 import GSAP from 'gsap'
+import Smoothscroll from '../components/Smoothscroll'
 
 export default class Pages {
   constructor({ element, elements }) {
@@ -10,6 +11,8 @@ export default class Pages {
   }
 
   create() {
+    this.createSmoothScrool()
+
     this.element = document.querySelector(this.selector)
     this.elements = {}
 
@@ -29,6 +32,34 @@ export default class Pages {
         }
       }
     })
+  }
+
+  createSmoothScrool() {
+    if (document.querySelector('.collumns__wrapper:nth-child(1) .collumn')) {
+      new Smoothscroll(
+        document.querySelector('.collumns__wrapper:nth-child(1) .collumn'),
+        {
+          direction: 'v-',
+          smooth: 0.1,
+        }
+      )
+
+      new Smoothscroll(
+        document.querySelector('.collumns__wrapper:nth-child(2) .collumn'),
+        {
+          direction: 'v',
+          smooth: 0.1,
+        }
+      )
+
+      new Smoothscroll(
+        document.querySelector('.collumns__wrapper:nth-child(3) .collumn'),
+        {
+          direction: 'v-',
+          smooth: 0.1,
+        }
+      )
+    }
   }
 
   show() {
