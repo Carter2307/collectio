@@ -11,6 +11,7 @@ const app = express()
 //Datas
 const inputs = require('../../config/inputs')
 let data = require('../../config/data')
+
 class arrayHandler {
   constructor(array) {
     this.array = array
