@@ -8,7 +8,8 @@
     "backend:development": "nodemon app.js",
     "frontend:build": "webpack --progress --config bundler/webpack.config.build.js",
     "frontend:development": "webpack serve --progress --config bundler/webpack.config.development.js",
-    "start": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\""
+    "start2": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\"",
+    "start": "npm run backend:development"
   },
   "keywords": [],
   "author": "",
