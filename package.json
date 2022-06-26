@@ -9,7 +9,7 @@
     "frontend:build": "webpack --progress --config bundler/webpack.config.build.js",
     "frontend:development": "webpack serve --progress --config bundler/webpack.config.development.js",
     "start2": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\"",
-    "start": "npm run backend:development"
+    "start": "npm run backend:build"
   },
   "keywords": [],
   "author": "",
