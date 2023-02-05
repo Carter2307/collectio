@@ -1,8 +1,10 @@
 const path = require('path')
+const dotenv = require('dotenv')
+dotenv.config()
 const express = require('express')
 
 const data = require('./config/data')
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 const app = express()
 

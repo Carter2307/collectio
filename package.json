@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "backend:build": "node app.js",
+    "server": "node app.js",
     "backend:development": "nodemon app.js",
     "build": "webpack --progress --config bundler/webpack.config.build.js",
     "frontend:development": "webpack serve --progress --config bundler/webpack.config.development.js",
@@ -24,7 +24,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
-    "dotenv": "^16.0.1",
+    "dotenv": "^16.0.3",
     "gsap": "^3.10.2",
     "image-minimizer-webpack-plugin": "^3.2.3",
     "imagemin": "^8.0.1",
