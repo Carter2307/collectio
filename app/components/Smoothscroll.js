@@ -47,7 +47,7 @@ export default class Smoothscroll {
   }
 
   onResize() {
-    this.element.clientHeight - window.innerHeight
+    this.scroll.limit = this.element.clientHeight - window.innerHeight
   }
 
   addListener() {

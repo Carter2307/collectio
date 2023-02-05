@@ -1,22 +1,22 @@
-import Components from "../classes/Components";
-import { each } from "lodash";
-import GSAP from "gsap";
-import split from "../utils/splittext";
-import MagneticIMG from "./MagneticImg";
+import Components from '../classes/Components'
+import { each } from 'lodash'
+import GSAP from 'gsap'
+import split from '../utils/splittext'
+import MagneticIMG from './MagneticIMG'
 
 export default class Menu extends Components {
   constructor() {
     super({
-      element: ".menu",
+      element: '.menu',
       elements: {
-        button: ".navigation__button",
-        list: ".menu__links",
-        items: ".menu__links__items__link",
-        number: ".menu__links__items__number",
+        button: '.navigation__button',
+        list: '.menu__links',
+        items: '.menu__links__items__link',
+        number: '.menu__links__items__number',
       },
-    });
+    })
 
-    this.init();
+    this.init()
   }
 
   init() {
@@ -34,26 +34,26 @@ export default class Menu extends Components {
 
     this.initAnimation()
     if (this.elements.button) {
-      this.elements.button.onclick = () => this.toggle();
+      this.elements.button.onclick = () => this.toggle()
     }
   }
 
   toggle() {
-    if (this.element.classList.contains("menu--open")) {
-      this.elements.button.classList.remove("navigation__button--active");
-      this.element.classList.remove("menu--open");
-      this.hide();
+    if (this.element.classList.contains('menu--open')) {
+      this.elements.button.classList.remove('navigation__button--active')
+      this.element.classList.remove('menu--open')
+      this.hide()
     } else {
-      this.elements.button.classList.add("navigation__button--active");
-      this.element.classList.add("menu--open");
-      this.show();
+      this.elements.button.classList.add('navigation__button--active')
+      this.element.classList.add('menu--open')
+      this.show()
     }
   }
 
   initAnimation() {
     GSAP.set(this.element, {
       autoAlpha: 0,
-    });
+    })
 
     // GSAP.set(this.elements.spans, {
     //   opacity: 0,
@@ -69,15 +69,13 @@ export default class Menu extends Components {
   }
 
   show() {
-
-
     this.animateIn = GSAP.timeline()
 
     this.animateIn.to(this.element, {
-      autoAlpha : 1,
+      autoAlpha: 1,
       duration: 2,
-      ease: "expo.inOut",
-    });
+      ease: 'expo.inOut',
+    })
 
     // this.animateIn.to(this.elements.spans, {
     //   autoAlpha: 1,
@@ -96,18 +94,18 @@ export default class Menu extends Components {
     //   ease: "expo.inOut",
     // });
     this.animateIn.call(() => {
-      this.magneticimage = new MagneticIMG();
-      this.magneticimage.init();
+      this.magneticimage = new MagneticIMG()
+      this.magneticimage.init()
     })
   }
 
   hide() {
-    this.animateOut = GSAP.timeline();
+    this.animateOut = GSAP.timeline()
 
     this.animateOut.to(this.element, {
       autoAlpha: 0,
       duration: 2,
-      ease: "expo.inOut",
-    });
+      ease: 'expo.inOut',
+    })
   }
 }

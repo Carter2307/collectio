@@ -1,6 +1,6 @@
 import Pages from 'classes/Pages'
 import data from '/config/data'
-import Dragndrop from 'components/DragNdrop'
+import Dragndrop from './../../components/Dragndrop'
 import autoBind from 'auto-bind'
 export default class Uploader extends Pages {
   constructor() {
