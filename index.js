@@ -2,6 +2,8 @@ const path = require('path')
 const dotenv = require('dotenv')
 dotenv.config()
 const express = require('express')
+const router = express.Router()
+const serverless = require('serverless-http')
 
 const data = require('./config/data')
 const port = process.env.PORT
@@ -54,4 +56,7 @@ app.listen(port, () => {
   console.log(`Server is listening on port: ${port}`)
 })
 
+app.use('/.netlify/functions/server', router) // path must route to lambda (express/server.js)
+
 module.exports = app
+module.exports.handler = serverless(app)

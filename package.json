@@ -6,10 +6,13 @@
   "scripts": {
     "server": "node app.js",
     "backend:development": "nodemon app.js",
-    "build": "webpack --progress --config bundler/webpack.config.build.js",
+    "build:front": "webpack --progress --config bundler/webpack.config.build.js",
     "frontend:development": "webpack serve --progress --config bundler/webpack.config.development.js",
     "start2": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\"",
-    "start": "npm run backend:build"
+    "start:backend": "npm run backend:build",
+    "build": "netlify-lambda build express",
+    "start": "node index.js",
+    "pug": "node node_modules/pug-cli/index.js views/ --out ./"
   },
   "keywords": [],
   "author": "",
@@ -52,6 +55,8 @@
   "dependencies": {
     "express": "^4.17.3",
     "multer": "^1.4.4",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6",
+    "serverless-http": "^3.1.1"
   }
 }
