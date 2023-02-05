@@ -4,6 +4,10 @@
     {
       "src": "index.js",
       "use": "@now/node"
+    },
+    {
+      "src": "/",
+      "use": "@now/node"
     }
   ],
   "routes": [
