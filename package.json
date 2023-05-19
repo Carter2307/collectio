@@ -20,7 +20,6 @@
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
-    "@squoosh/lib": "^0.4.0",
     "auto-bind": "^5.0.1",
     "babel-loader": "^8.2.4",
     "body-parser": "^1.20.0",
@@ -55,9 +54,7 @@
   "dependencies": {
     "express": "^4.17.3",
     "multer": "^1.4.4",
-    "netlify-lambda": "^2.0.15",
     "pug": "^3.0.2",
-    "pug-cli": "^1.0.0-alpha6",
-    "serverless-http": "^3.1.1"
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
