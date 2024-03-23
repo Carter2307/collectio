@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "node app.js",
-    "backend:development": "nodemon app.js",
+    "server": "node index.js",
+    "backend:development": "nodemon index.js",
     "build:front": "webpack --progress --config bundler/webpack.config.build.js",
     "frontend:development": "webpack serve --progress --config bundler/webpack.config.development.js",
     "start2": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\"",
@@ -32,7 +32,6 @@
     "imagemin": "^8.0.1",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
-    "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.0",
     "imagesloaded": "^5.0.0",
     "include-media": "^1.4.10",
